@@ -1,0 +1,18 @@
+{
+  "id": 5556,
+  "category": {
+    "id": 5556,
+    "name": "Mia Mia"
+  },
+  "name": "doggie",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 5556,
+      "name": "Castellano"
+    }
+  ],
+  "status": "available"
+}
