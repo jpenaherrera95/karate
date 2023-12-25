@@ -1,0 +1,11 @@
+Conclusiones
+
+Utilizando la herramienta de Karate logramos crear un proyecto de API automatizado usando diferentes configuraciones como:
+- Data driven
+- Ambientes
+- BDD
+- Reporteria
+- Ejecucion mediante comandos
+
+Con esto podriamos tranquilamente escalarlo usando la estructura establecida para diferentes APIs y manejar un proyecto de un caso real
+Revisando la documentacion igual hay muchas mas configuraciones que se pueden ir añadiendo en base a las necesidades de cada negocio
