@@ -1,15 +1,30 @@
-Feature: Metodos CRUD de Pets APIs
+Feature: Metodo POST para un Pet
 
-  @setup
-  Scenario:
-    * def pet = read('data/pets.json')
-    * def data = call read('pets-dataGeneration.feature') { id: '#(pet)', nombre: 'Nacho', raza: 'Schnauzer'}
-
-  Scenario Outline: Obtener mascota
-    Given url baseUrl
-    And path petsPath + petId
+  Scenario: Crear una nueva Pet
+    Given url baseUrl + petsPath
     And header Accept = 'application/json'
-    When method GET
+    And request
+    """
+    {
+      "id": '#(id)',
+      "category": {
+      "id": '#(id)',
+      "name": '#(nombre)'
+    },
+      "name": "doggie",
+      "photoUrls": [
+        "string"
+      ],
+      "tags": [
+        {
+          "id": '#(id)',
+          "name": '#(raza)'
+        }
+      ],
+      "status": "available"
+    }
+    """
+    When method POST
     Then status 200
     And match $ contains { id: '#(id)'}
     And match $ contains { id: '#notnull'}
@@ -34,6 +49,3 @@ Feature: Metodos CRUD de Pets APIs
       status: '#string'
     }
     """
-
-    Examples:
-    | karate.setup().pet |
