@@ -1,7 +1,11 @@
 Feature: Metodo DELETE para un Pet
 
+  Background:
+    * def petLocalId = 5557
+    * def data = call read('pets-dataGeneration.feature') { id: '#(petLocalId)', nombre: 'Pancho', raza: 'Castellano'}
+
   Scenario: Eliminar una Pet
-    Given url baseUrl + petsPath + '/' + petId
+    Given url baseUrl + petsPath + '/' + petLocalId
     And header Accept = 'application/json'
     And header api_key = appSecret
     When method DELETE
